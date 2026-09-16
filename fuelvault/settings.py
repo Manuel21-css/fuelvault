@@ -148,10 +148,10 @@ MAILERS = {
 
 # CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    config('CORS_ALLOWED_ORIGINS').split(',') 
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",
+    config('CORS_ALLOWED_ORIGINS').split(',')
 ]
