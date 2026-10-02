@@ -35,8 +35,7 @@
           <span class="brand-name">LitreVault</span>
         </div>
         <nav class="side-nav">
-          <a class="side-link active" href="/userdashboard/"
-            ><svg
+          <a class="side-link {% if request.path == '/userdashboard/' %}active{% endif %}" href="/userdashboard/"><svg
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -51,8 +50,7 @@
                 d="M6 10v9a1 1 0 0 0 1 1h4v-6h2v6h4a1 1 0 0 0 1-1v-9"
               /></svg
             ><span>Dashboard</span></a
-          ><a class="side-link" href="/litrelots/"
-            ><svg
+          ><a class="side-link {% if request.path == '/litrelots/' %}active{% endif %}" href="/litrelots/"><svg
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -66,8 +64,7 @@
                 d="M12 3c3.6 4.2 6 7.6 6 10.5A6 6 0 1 1 6 13.5C6 10.6 8.4 7.2 12 3Z"
               /></svg
             ><span>My Litres</span></a
-          ><a class="side-link" href="/buylitre/"
-            ><svg
+          ><a class="side-link {% if request.path == '/buylitre/' %}active{% endif %}" href="/buylitre/"><svg
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -80,8 +77,7 @@
               <circle cx="12" cy="12" r="9" />
               <path d="M12 8v8M8 12h8" /></svg
             ><span>Buy Litres</span></a
-          ><a class="side-link" href="/redeemfuel/"
-            ><svg
+          ><a class="side-link {% if request.path == '/redeemfuel/' %}active{% endif %}" href="/redeemfuel/"><svg
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -157,7 +153,7 @@
                 class="mono"
                 style="color: var(--ink-faint); font-size: 11px"
               >
-                Litres: 45.500L
+                {{ available_litres|floatformat:3 }}L
               </div>
             </div>
           </div>
@@ -257,7 +253,7 @@
           <circle cx="12" cy="12" r="9" />
           <path d="M12 8v8M8 12h8" /></svg
         ><span>Buy</span></a
-      ><a class="nav-item" href="/buylitre/"
+      ><a class="nav-item" href="/redeemfuel/"
         ><svg
           width="24"
           height="24"
@@ -273,7 +269,7 @@
           <rect x="3.5" y="13.5" width="7" height="7" rx="1" />
           <path d="M14 14h2.5v2.5H14zM19 14h1.5M19 19h1.5M14 19h1" /></svg
         ><span>Redeem</span></a
-      ><a class="nav-item" href="15-transaction-history.html"
+      ><a class="nav-item" href="#"
         ><svg
           width="24"
           height="24"
